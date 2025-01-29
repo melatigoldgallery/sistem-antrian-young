@@ -17,3 +17,26 @@ document.querySelector('.form').addEventListener('submit', function(e) {
         alert("Username atau Password salah!");
     }
 });
+// Set persistence sebelum login
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  .then(() => {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  })
+  .then((userCredential) => {
+    window.location.href = './admin.html';
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+function handleLogin(username, password) {
+    firebase.auth().signInWithEmailAndPassword(username, password)
+      .then((userCredential) => {
+        // Login berhasil
+        window.location.href = '/admin.html';
+      })
+      .catch((error) => {
+        // Handle error login
+        console.error(error);
+        alert('Login gagal: ' + error.message);
+      });
+  }

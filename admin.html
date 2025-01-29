@@ -56,7 +56,7 @@
           </div>
           <div class="">
             <span id="clock" class="font-weight-bold"></span>
-            <br/>
+            <br />
             <span id="tgl" class="font-weight-bold"></span>
           </div>
         </div>
@@ -80,7 +80,7 @@
         <div class="container-fluid">
           <!-- Queue Management Section -->
           <div class="row">
-            <div class="col-md-3 mx-auto mb-5">
+            <div class="col-md-4 mx-auto mb-5">
               <div class="card">
                 <div class="card-body text-center">
                   <h5 class="card-title mb-4">Nomor Antrian Tertunda</h5>
@@ -93,7 +93,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 mx-auto mb-5">
+            <div class="col-md-4 mx-auto mb-5">
               <div class="card">
                 <div class="card-body text-center">
                   <h5 class="card-title mb-4">Nomor Antrian Saat ini</h5>
@@ -109,7 +109,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 mx-auto">
+            <div class="col-md-3 mx-auto d-none">
               <div class="card">
                 <div class="card-body text-center">
                   <h5 class="card-title mb-4">Nomor Antrian Selanjutnya</h5>
@@ -120,7 +120,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 mx-auto">
+            <div class="col-md-4 mx-auto">
               <div class="card">
                 <div class="card-body text-center">
                   <h5 class="card-title mb-4">Informasi Kendaraan</h5>
@@ -314,6 +314,14 @@
       <div class="credit">&copy Melati Gold Gallery 2025</div>
     </footer>
     <script type="module" src="js/melati.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+      // Panggil fungsi protectPage saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", protectPage);
+      document.addEventListener("DOMContentLoaded", () => {
+        checkAuthState();
+      });
+    </script>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
       import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
